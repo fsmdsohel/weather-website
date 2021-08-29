@@ -14,7 +14,13 @@ const searchInput = () => {
   const searchInput = document.getElementById("search-input");
   const search = searchInput.value;
   searchInput.value = "";
-  return search;
+  if (search == "") {
+    document.getElementById(
+      "search-input"
+    ).placeholder = `Please type your city name`;
+  } else {
+    return search;
+  }
 };
 
 const DisplayWeatherData = (data) => {
@@ -35,23 +41,44 @@ const DisplayWeatherData = (data) => {
   ).src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 
   //   display temperature
-  document.getElementById("temperature").innerText = `${data.main.temp}°`;
+  document.getElementById("temperature").innerText = `${Math.round(
+    data.main.temp
+  )}°`;
+
+  document.getElementById("weather-detail").innerText =
+    data.weather[0].description;
+
+  document.getElementById("teaperature-feels-like").innerText = `${Math.round(
+    data.main.feels_like
+  )}°`;
+
+  document.getElementById("wind-speed").innerText = data.wind.speed;
+
+  document.getElementById("humidity").innerText = `${data.main.humidity}%`;
+
+  document.getElementById("visibility").innerText = `${data.visibility} km`;
+
+  document.getElementById("pressure").innerText = `${data.main.pressure} mb`;
 };
 
 document.getElementById("search-input").onfocus = () => {
   window.onkeypress = async (e) => {
     if (e.key == "Enter") {
       const search = searchInput();
-      const weatherData = await loadData(search);
-      DisplayWeatherData(weatherData);
+      if (search) {
+        const weatherData = await loadData(search);
+        DisplayWeatherData(weatherData);
+      }
     }
   };
 };
 
 document.getElementById("search-btn").onclick = async () => {
   const search = searchInput();
-  const weatherData = await loadData(search);
-  DisplayWeatherData(weatherData);
+  if (search) {
+    const weatherData = await loadData(search);
+    DisplayWeatherData(weatherData);
+  }
 };
 
 // display dinamic time
@@ -61,7 +88,9 @@ setInterval(() => {
   if (date.getHours >= 12) {
     amPm = "PM";
   }
+  var hours = date.getHours();
+  hours = hours % 12 || 12;
   document.getElementById(
     "time"
-  ).innerText = `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}${amPm}`;
+  ).innerText = `${hours}:${date.getMinutes()}:${date.getSeconds()} ${amPm}`;
 }, 1000);

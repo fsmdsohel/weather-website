@@ -4,19 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-::-webkit-input-placeholder {
-  /* Edge */
-  color: #ffffff;
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #ffffff;
-}
-
-::placeholder {
-  color: #ffffff;
+  transition: all 0.3s ease-in-out;
 }
 
 body {
@@ -31,13 +19,20 @@ body {
     url(./images/4014646.jpg);
   /* background:url(./images/bg.jpg); */
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: center center;
   color: #fff;
 }
+.container {
+  max-width: 600px;
+  width: 100%;
+}
+.container .input-box,
+.container .display-data {
+  margin: 15px;
+}
 
 .input-box {
-  width: 100%;
   display: flex;
   justify-content: center;
 }
@@ -49,15 +44,22 @@ body {
   border-radius: 20px;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
     0 4px 4px rgba(0, 0, 0, 0.12);
-  margin: 25px 0;
+  margin: 10px 0;
   display: flex;
+}
+
+.search-input::placeholder {
+  color: #ffffff;
+}
+.error::placeholder {
+  color: #ff3131;
 }
 
 .search-input {
   padding: 10px 15px;
   width: 200px;
   outline: none;
-  font-size: 16px;
+  font-size: 12px;
   color: #ffffff;
   background: transparent;
   border: none;
@@ -86,12 +88,6 @@ body {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
-}
-
-.container {
-  max-width: 700px;
-  width: 100%;
-  margin: 15px;
 }
 
 .display-data {
@@ -143,4 +139,8 @@ body {
 }
 .weather-details div :last-child {
   font-weight: 500;
+}
+
+#weather-detail {
+  text-transform: capitalize;
 }
