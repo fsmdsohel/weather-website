@@ -18,7 +18,10 @@ const searchInput = () => {
     document.getElementById(
       "search-input"
     ).placeholder = `Please type your city name`;
+    document.getElementById("search-input").classList.add("error");
   } else {
+    document.getElementById("search-input").placeholder = `Type your city name`;
+    document.getElementById("search-input").classList.remove("error");
     return search;
   }
 };
