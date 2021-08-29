@@ -59,7 +59,7 @@ const DisplayWeatherData = (data) => {
 
   document.getElementById("humidity").innerText = `${data.main.humidity}%`;
 
-  document.getElementById("visibility").innerText = `${data.visibility} km`;
+  document.getElementById("visibility").innerText = `${data.visibility} m`;
 
   document.getElementById("pressure").innerText = `${data.main.pressure} mb`;
 };
