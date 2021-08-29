@@ -1,0 +1,146 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+::-webkit-input-placeholder {
+  /* Edge */
+  color: #ffffff;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #ffffff;
+}
+
+::placeholder {
+  color: #ffffff;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url(./images/4014646.jpg);
+  /* background:url(./images/bg.jpg); */
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center center;
+  color: #fff;
+}
+
+.input-box {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.input-wrapper {
+  backdrop-filter: blur(10px) saturate(200%);
+  -webkit-backdrop-filter: blur(18px) saturate(200%);
+  background-color: rgba(199, 199, 199, 0.5);
+  border-radius: 20px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
+    0 4px 4px rgba(0, 0, 0, 0.12);
+  margin: 25px 0;
+  display: flex;
+}
+
+.search-input {
+  padding: 10px 15px;
+  width: 200px;
+  outline: none;
+  font-size: 16px;
+  color: #ffffff;
+  background: transparent;
+  border: none;
+}
+.search-btn {
+  height: 100%;
+  width: 90px;
+  border-radius: 20px;
+  margin: 0;
+  padding: 0;
+  border-color: tomato;
+  font-size: 18px;
+  background-image: linear-gradient(
+    to right,
+    #f857a6 0%,
+    #ff5858 51%,
+    #f857a6 100%
+  );
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border: none;
+}
+
+.search-btn:hover {
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  margin: 15px;
+}
+
+.display-data {
+  padding: 25px;
+  /* glassmorphism */
+  backdrop-filter: blur(10px) saturate(200%);
+  -webkit-backdrop-filter: blur(18px) saturate(200%);
+  background-color: rgba(199, 199, 199, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(199, 199, 199, 0.5);
+}
+.weather-wrapper {
+  display: flex;
+  align-items: center;
+}
+.weather {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+}
+.weather-icon {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.weather-wrapper img {
+  width: 150px;
+  position: absolute;
+  left: -30px;
+}
+.weather-wrapper h1 {
+  font-size: 65px;
+  margin-left: 100px;
+}
+.weather-text {
+  margin-left: 20px;
+}
+.weather-text :last-child {
+  font-weight: 500;
+}
+.weather-text i {
+  margin-left: 15px;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.weather-details div :last-child {
+  font-weight: 500;
+}
