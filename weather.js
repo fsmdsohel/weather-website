@@ -46,7 +46,7 @@ const DisplayWeatherData = (data) => {
   //   display temperature
   document.getElementById("temperature").innerText = `${Math.round(
     data.main.temp
-  )}°`;
+  )}°C`;
 
   document.getElementById("weather-detail").innerText =
     data.weather[0].description;
