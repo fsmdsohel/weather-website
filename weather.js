@@ -88,7 +88,7 @@ document.getElementById("search-btn").onclick = async () => {
 setInterval(() => {
   const date = new Date();
   let amPm = "AM";
-  if (date.getHours >= 12) {
+  if (date.getHours() >= 12) {
     amPm = "PM";
   }
   var hours = date.getHours();
