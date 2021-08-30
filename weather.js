@@ -97,3 +97,17 @@ setInterval(() => {
     "time"
   ).innerText = `${hours}:${date.getMinutes()}:${date.getSeconds()} ${amPm}`;
 }, 1000);
+
+// change randomly background
+(() => {
+  const randomNumber = Math.round(Math.random() * 2);
+  randomNumber;
+  const bodyElement = document.getElementById("body");
+  bodyElement.style = `
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(./images/bg-${
+    randomNumber + 1
+  }.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;`;
+})();
